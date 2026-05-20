@@ -240,7 +240,7 @@ export function GalleryShowcase() {
               { id: 5, src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260512_120312_914-2Iywj65o8bBwGtYdvFn75R6LRZIfxm.jpg', alt: 'Tan Binder Open Interior' },
               { id: 6, src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260512_120431_070-YyWtujD4rhqbwo736mxZrPo0yRHqOd.jpg', alt: 'Sage Green Binder Open Interior' },
               { id: 7, src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260512_120213_930-cWnxIhcisXNo4gR4nX2lBRYasJyj5H.jpg', alt: 'Purple and Pink Binders Comparison' },
-              { id: 8, src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260512_212621_7-HQYtwwZ1HBhUee4GG4SbJFoSBrfBXA.jpg', alt: 'Binder Collection Display Basket' },
+              { id: 8, src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260512_212621_7-hVIiLB7sE2l2Vbu6LKiqCkDme2MFMe.jpg', alt: 'Cream Quilted Basket Collection Display' },
               { id: 9, src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260512_120449_915-UiHdFgragHi3iDW9Wu8BA0ZI4U5OoM.jpg', alt: 'Beige Binder Open Interior' },
               { id: 10, src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260513_135513_931-pnTHzMlijgQhh5gopOTq4ZsKVM5Yzg.jpg', alt: 'Accessories and Jewelry Display' },
               { id: 11, src: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260512_120444_125-W3BVGhGHRIn8LsPhNV2sd3RlHjNtJg.jpg', alt: 'Pink and Blue Binders Side by Side' },
