@@ -183,23 +183,47 @@ function ProductDetailModal({ product, isOpen, onClose }: { product: SelectedPro
             </div>
 
             <div className="p-6 md:p-8">
-              {/* Product Image */}
-              <div className="relative aspect-square rounded-2xl overflow-hidden mb-6 bg-gradient-to-br from-primary/5 to-accent/5">
-                <Image
-                  src={product.image}
-                  alt={product.title}
-                  fill
-                  className="object-cover"
-                />
-                {product.badge && (
-                  <div className="absolute top-4 left-4">
-                    <span className="inline-flex items-center gap-1 bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-medium">
-                      <Sparkles className="w-4 h-4" />
-                      {product.badge}
-                    </span>
+              {/* Product Images */}
+              {product.tiles && product.tiles.length > 0 ? (
+                <div className="grid grid-cols-2 gap-3 mb-6">
+                  <div className="col-span-2 md:col-span-1 md:row-span-2 relative aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-primary/5 to-accent/5">
+                    <Image
+                      src={product.image}
+                      alt={product.title}
+                      fill
+                      className="object-cover"
+                    />
                   </div>
-                )}
-              </div>
+                  {product.tiles.slice(0, 3).map((tile, idx) => (
+                    <div key={idx} className="relative aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-primary/5 to-accent/5">
+                      <Image
+                        src={tile}
+                        alt={`${product.title} view ${idx + 2}`}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="relative aspect-square rounded-2xl overflow-hidden mb-6 bg-gradient-to-br from-primary/5 to-accent/5">
+                  <Image
+                    src={product.image}
+                    alt={product.title}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              )}
+
+              {product.badge && (
+                <div className="mb-6">
+                  <span className="inline-flex items-center gap-1 bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-medium">
+                    <Sparkles className="w-4 h-4" />
+                    {product.badge}
+                  </span>
+                </div>
+              )}
 
               {/* Product Details */}
               <h2 className="font-noto-sans text-3xl md:text-4xl text-foreground mb-4">
