@@ -25,13 +25,9 @@ const envelopeInsertTiles = [
 ]
 
 const binderTiles = [
-  'https://cdn.builder.io/api/v1/image/assets%2F8c358e96430c4451949ddae1cc8ed29a%2F174b1d1c6c2d43dd80145cc5a3ca4232?format=webp&width=800&height=1200',
-  'https://cdn.builder.io/api/v1/image/assets%2F8c358e96430c4451949ddae1cc8ed29a%2F737b1d8259f944f2bc33f99a69eae200?format=webp&width=800&height=1200',
-  'https://cdn.builder.io/api/v1/image/assets%2F8c358e96430c4451949ddae1cc8ed29a%2F29c95cd0df64421fadb585359962de64?format=webp&width=800&height=1200',
-  'https://cdn.builder.io/api/v1/image/assets%2F8c358e96430c4451949ddae1cc8ed29a%2Ff7cf16cc946b4cceb07665cd2a6b1462?format=webp&width=800&height=1200',
-  'https://cdn.builder.io/api/v1/image/assets%2F8c358e96430c4451949ddae1cc8ed29a%2F1eeabf6ec07643b988c71a0c50b6c40d?format=webp&width=800&height=1200',
-  'https://cdn.builder.io/api/v1/image/assets%2F8c358e96430c4451949ddae1cc8ed29a%2F579a464d572041d8bb3f870637646b8e?format=webp&width=800&height=1200',
-  'https://cdn.builder.io/api/v1/image/assets%2F8c358e96430c4451949ddae1cc8ed29a%2F4fed0d0ca58a462aa2b0d8f508769f86?format=webp&width=800&height=1200',
+  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260512_120350_361-R0v0SJltcOlZOzOReoO7LoxFQ2dIvL.jpg',
+  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260512_120344_170-AU1yw9c64TykNCeSUUgGYMT5rZ5XGd.jpg',
+  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260513_140143_823-vuHemupht7B5JkfZzNtS4HO2DSb19j.jpg',
 ]
 
 const products = [
@@ -52,7 +48,7 @@ const products = [
     title: 'Premium Budget Binders',
     description: 'Elegant leather binders with gold ring mechanisms and card slots',
     category: 'planners',
-    image: '/images/budget-binders.png',
+    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260513_140132_368-m5CrJ3Og5L36UkadWr1IaYEgDit5hC.jpg',
     tiles: binderTiles,
     features: ['Multiple Colors', 'Card Pockets', 'Gold Rings'],
     badge: 'Premium',
@@ -97,7 +93,7 @@ const products = [
     title: 'Desk Organizer Bundle',
     description: 'Complete home office setup with budget planning essentials',
     category: 'essentials',
-    image: 'https://cdn.builder.io/api/v1/image/assets%2F8c358e96430c4451949ddae1cc8ed29a%2Fc455b93c553b40a384752fa000208e62?format=webp&width=800&height=1200',
+    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260512_212621_7-gYX2II8HBTXxDywTHOsJYfV77nZke4.jpg',
     features: ['Multi-Piece Set', 'Storage Included', 'Aesthetic Design'],
     badge: 'Value Set',
     fullDescription: 'Complete desk organization bundle including pen holder, note pads, and sticky notes in coordinated soft colors.',
@@ -183,23 +179,39 @@ function ProductDetailModal({ product, isOpen, onClose }: { product: SelectedPro
             </div>
 
             <div className="p-6 md:p-8">
-              {/* Product Image */}
-              <div className="relative aspect-square rounded-2xl overflow-hidden mb-6 bg-gradient-to-br from-primary/5 to-accent/5">
-                <Image
-                  src={product.image}
-                  alt={product.title}
-                  fill
-                  className="object-cover"
-                />
-                {product.badge && (
-                  <div className="absolute top-4 left-4">
-                    <span className="inline-flex items-center gap-1 bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-medium">
-                      <Sparkles className="w-4 h-4" />
-                      {product.badge}
-                    </span>
-                  </div>
-                )}
-              </div>
+              {/* Product Images */}
+              {product.tiles && product.tiles.length > 0 ? (
+                <div className="grid grid-cols-3 gap-3 mb-6">
+                  {product.tiles.map((tile, idx) => (
+                    <div key={idx} className="relative aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-primary/5 to-accent/5">
+                      <Image
+                        src={tile}
+                        alt={`${product.title} view ${idx + 1}`}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="relative aspect-square rounded-2xl overflow-hidden mb-6 bg-gradient-to-br from-primary/5 to-accent/5">
+                  <Image
+                    src={product.image}
+                    alt={product.title}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              )}
+
+              {product.badge && (
+                <div className="mb-6">
+                  <span className="inline-flex items-center gap-1 bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-medium">
+                    <Sparkles className="w-4 h-4" />
+                    {product.badge}
+                  </span>
+                </div>
+              )}
 
               {/* Product Details */}
               <h2 className="font-noto-sans text-3xl md:text-4xl text-foreground mb-4">
