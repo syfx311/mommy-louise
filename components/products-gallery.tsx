@@ -52,7 +52,7 @@ const products = [
     title: 'Premium Budget Binders',
     description: 'Elegant leather binders with gold ring mechanisms and card slots',
     category: 'planners',
-    image: '/images/budget-binders.png',
+    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260513_140132_368-m5CrJ3Og5L36UkadWr1IaYEgDit5hC.jpg',
     tiles: binderTiles,
     features: ['Multiple Colors', 'Card Pockets', 'Gold Rings'],
     badge: 'Premium',
