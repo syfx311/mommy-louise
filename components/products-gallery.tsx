@@ -25,13 +25,9 @@ const envelopeInsertTiles = [
 ]
 
 const binderTiles = [
-  'https://cdn.builder.io/api/v1/image/assets%2F8c358e96430c4451949ddae1cc8ed29a%2F174b1d1c6c2d43dd80145cc5a3ca4232?format=webp&width=800&height=1200',
-  'https://cdn.builder.io/api/v1/image/assets%2F8c358e96430c4451949ddae1cc8ed29a%2F737b1d8259f944f2bc33f99a69eae200?format=webp&width=800&height=1200',
-  'https://cdn.builder.io/api/v1/image/assets%2F8c358e96430c4451949ddae1cc8ed29a%2F29c95cd0df64421fadb585359962de64?format=webp&width=800&height=1200',
-  'https://cdn.builder.io/api/v1/image/assets%2F8c358e96430c4451949ddae1cc8ed29a%2Ff7cf16cc946b4cceb07665cd2a6b1462?format=webp&width=800&height=1200',
-  'https://cdn.builder.io/api/v1/image/assets%2F8c358e96430c4451949ddae1cc8ed29a%2F1eeabf6ec07643b988c71a0c50b6c40d?format=webp&width=800&height=1200',
-  'https://cdn.builder.io/api/v1/image/assets%2F8c358e96430c4451949ddae1cc8ed29a%2F579a464d572041d8bb3f870637646b8e?format=webp&width=800&height=1200',
-  'https://cdn.builder.io/api/v1/image/assets%2F8c358e96430c4451949ddae1cc8ed29a%2F4fed0d0ca58a462aa2b0d8f508769f86?format=webp&width=800&height=1200',
+  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260512_120350_361-R0v0SJltcOlZOzOReoO7LoxFQ2dIvL.jpg',
+  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260512_120344_170-AU1yw9c64TykNCeSUUgGYMT5rZ5XGd.jpg',
+  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_20260513_140143_823-vuHemupht7B5JkfZzNtS4HO2DSb19j.jpg',
 ]
 
 const products = [
@@ -185,20 +181,12 @@ function ProductDetailModal({ product, isOpen, onClose }: { product: SelectedPro
             <div className="p-6 md:p-8">
               {/* Product Images */}
               {product.tiles && product.tiles.length > 0 ? (
-                <div className="grid grid-cols-2 gap-3 mb-6">
-                  <div className="col-span-2 md:col-span-1 md:row-span-2 relative aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-primary/5 to-accent/5">
-                    <Image
-                      src={product.image}
-                      alt={product.title}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  {product.tiles.slice(0, 3).map((tile, idx) => (
+                <div className="grid grid-cols-3 gap-3 mb-6">
+                  {product.tiles.map((tile, idx) => (
                     <div key={idx} className="relative aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-primary/5 to-accent/5">
                       <Image
                         src={tile}
-                        alt={`${product.title} view ${idx + 2}`}
+                        alt={`${product.title} view ${idx + 1}`}
                         fill
                         className="object-cover"
                       />
